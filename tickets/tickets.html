@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Golden State RP | Ticket Center</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">GSRP</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ticket.html">Support</a>
+    </nav>
+
+  </header>
+
+  <!-- TICKET CENTER -->
+
+  <section class="ticket-page">
+
+    <div class="ticket-box">
+
+      <h1>Support Center</h1>
+
+      <p>
+        Need help? Submit a support ticket below.
+      </p>
+
+      <form id="ticketForm">
+
+        <input
+          type="text"
+          id="username"
+          placeholder="Discord Username"
+          required
+        >
+
+        <select id="category" required>
+
+          <option value="">Select Ticket Category</option>
+
+          <option>Misc Support</option>
+          <option>Staff Support</option>
+          <option>Staff Report</option>
+          <option>Ban Appeal</option>
+          <option>Donator Support</option>
+
+          <option>LSPD High Command</option>
+          <option>SASP High Command</option>
+          <option>BCSO High Command</option>
+
+          <option>Civilian Manager</option>
+          <option>Civilian Internal Affairs</option>
+          <option>Civilian Operations</option>
+          <option>Public Operations</option>
+
+          <option>Community Ownership Team</option>
+          <option>Development Operations</option>
+          <option>Staff Operations</option>
+          <option>Event Operations</option>
+          <option>Emergency Services Operations</option>
+
+        </select>
+
+        <textarea
+          id="message"
+          placeholder="Explain your issue..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Submit Ticket
+        </button>
+
+      </form>
+
+      <div id="successMessage">
+        Ticket submitted successfully.
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -11,39 +11,45 @@ body{
   font-family:'Montserrat', sans-serif;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 header{
+
   position:fixed;
+
   top:0;
+
   width:100%;
 
   padding:20px 60px;
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.6);
 
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(10px);
 
   z-index:1000;
 }
 
 .logo{
-  font-size:30px;
+  font-size:32px;
   font-weight:900;
   letter-spacing:3px;
 }
 
 nav a{
+
   color:white;
+
   text-decoration:none;
+
   margin-left:25px;
-  font-weight:500;
+
   transition:0.3s;
 }
 
@@ -51,11 +57,10 @@ nav a:hover{
   color:#999;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO */
 
 .hero{
+
   height:100vh;
 
   background:
@@ -63,54 +68,68 @@ nav a:hover{
   center/cover no-repeat;
 
   display:flex;
+
   justify-content:center;
+
   align-items:center;
 
-  position:relative;
   text-align:center;
+
+  position:relative;
 }
 
 .overlay{
+
   position:absolute;
+
   inset:0;
 
-  background:rgba(0,0,0,0.65);
+  background:rgba(0,0,0,0.7);
 }
 
 .hero-content{
+
   position:relative;
+
   z-index:2;
 
   max-width:800px;
 }
 
 .hero h1{
+
   font-size:85px;
+
   font-weight:900;
 }
 
 .hero p{
+
   margin-top:15px;
-  color:#ccc;
+
   font-size:20px;
+
+  color:#ccc;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTON */
 
 .btn{
+
   display:inline-block;
 
   margin-top:35px;
+
   padding:14px 34px;
 
-  border-radius:8px;
+  border-radius:10px;
 
   background:white;
+
   color:black;
 
   text-decoration:none;
+
   font-weight:700;
 
   transition:0.3s;
@@ -118,45 +137,52 @@ nav a:hover{
 
 .btn:hover{
   transform:translateY(-3px);
-  opacity:0.9;
 }
 
-/* =========================
-   ABOUT SECTION
-========================= */
+/* ABOUT */
 
 .about{
+
   padding:120px 10%;
+
   text-align:center;
 }
 
 .about h2{
+
   font-size:45px;
+
   margin-bottom:20px;
 }
 
 .about p{
+
   color:#aaa;
+
   max-width:700px;
+
   margin:auto;
 }
 
 .cards{
+
   margin-top:60px;
 
   display:grid;
+
   grid-template-columns:
-  repeat(auto-fit, minmax(250px,1fr));
+  repeat(auto-fit,minmax(250px,1fr));
 
   gap:25px;
 }
 
 .card{
+
   background:#141414;
 
   padding:40px 25px;
 
-  border-radius:15px;
+  border-radius:18px;
 
   transition:0.3s;
 }
@@ -169,12 +195,12 @@ nav a:hover{
   margin-bottom:15px;
 }
 
-/* =========================
-   DISCORD SECTION
-========================= */
+/* DISCORD */
 
 .discord{
+
   padding:120px 10%;
+
   text-align:center;
 }
 
@@ -183,29 +209,31 @@ nav a:hover{
 }
 
 .discord p{
-  color:#aaa;
+
   margin-top:15px;
+
+  color:#aaa;
 }
 
-/* =========================
-   TICKET SYSTEM
-========================= */
+/* TICKET PAGE */
 
 .ticket-page{
+
   min-height:100vh;
 
   display:flex;
+
   justify-content:center;
+
   align-items:center;
 
   padding:140px 20px;
-
-  background:#0a0a0a;
 }
 
 .ticket-box{
 
   width:100%;
+
   max-width:700px;
 
   background:#121212;
@@ -218,18 +246,25 @@ nav a:hover{
 }
 
 .ticket-box h1{
+
   font-size:42px;
+
   margin-bottom:15px;
 }
 
 .ticket-box p{
+
   color:#aaa;
+
   margin-bottom:35px;
 }
 
 .ticket-box form{
+
   display:flex;
+
   flex-direction:column;
+
   gap:20px;
 }
 
@@ -253,13 +288,16 @@ nav a:hover{
 }
 
 .ticket-box textarea{
+
   min-height:180px;
+
   resize:none;
 }
 
 .ticket-box button{
 
   background:white;
+
   color:black;
 
   border:none;
@@ -279,6 +317,8 @@ nav a:hover{
   transform:translateY(-3px);
 }
 
+/* SUCCESS */
+
 #successMessage{
 
   display:none;
@@ -294,9 +334,7 @@ nav a:hover{
   border-radius:10px;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ANIMATION */
 
 .fade-up{
   animation:fadeUp 1s ease;
@@ -316,9 +354,7 @@ nav a:hover{
 
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:768px){
 

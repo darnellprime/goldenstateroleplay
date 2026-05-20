@@ -2,15 +2,18 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Montserrat', sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
   background:#0a0a0a;
   color:white;
+  font-family:'Montserrat', sans-serif;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 header{
   position:fixed;
@@ -23,7 +26,9 @@ header{
   justify-content:space-between;
   align-items:center;
 
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.5);
+
+  backdrop-filter:blur(8px);
 
   z-index:1000;
 }
@@ -38,9 +43,153 @@ nav a{
   color:white;
   text-decoration:none;
   margin-left:25px;
+  font-weight:500;
+  transition:0.3s;
 }
 
-/* TICKET PAGE */
+nav a:hover{
+  color:#999;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+  height:100vh;
+
+  background:
+  url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1974")
+  center/cover no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
+  text-align:center;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:85px;
+  font-weight:900;
+}
+
+.hero p{
+  margin-top:15px;
+  color:#ccc;
+  font-size:20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+  display:inline-block;
+
+  margin-top:35px;
+  padding:14px 34px;
+
+  border-radius:8px;
+
+  background:white;
+  color:black;
+
+  text-decoration:none;
+  font-weight:700;
+
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  opacity:0.9;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+  padding:120px 10%;
+  text-align:center;
+}
+
+.about h2{
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.about p{
+  color:#aaa;
+  max-width:700px;
+  margin:auto;
+}
+
+.cards{
+  margin-top:60px;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit, minmax(250px,1fr));
+
+  gap:25px;
+}
+
+.card{
+  background:#141414;
+
+  padding:40px 25px;
+
+  border-radius:15px;
+
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+/* =========================
+   DISCORD SECTION
+========================= */
+
+.discord{
+  padding:120px 10%;
+  text-align:center;
+}
+
+.discord h2{
+  font-size:45px;
+}
+
+.discord p{
+  color:#aaa;
+  margin-top:15px;
+}
+
+/* =========================
+   TICKET SYSTEM
+========================= */
 
 .ticket-page{
   min-height:100vh;
@@ -49,10 +198,13 @@ nav a{
   justify-content:center;
   align-items:center;
 
-  padding:120px 20px;
+  padding:140px 20px;
+
+  background:#0a0a0a;
 }
 
 .ticket-box{
+
   width:100%;
   max-width:700px;
 
@@ -62,7 +214,7 @@ nav a{
 
   border-radius:20px;
 
-  box-shadow:0 0 25px rgba(0,0,0,0.5);
+  box-shadow:0 0 30px rgba(0,0,0,0.5);
 }
 
 .ticket-box h1{
@@ -85,7 +237,9 @@ nav a{
 .ticket-box select,
 .ticket-box textarea{
 
-  background:#1a1a1a;
+  width:100%;
+
+  background:#1b1b1b;
 
   border:none;
 
@@ -131,11 +285,62 @@ nav a{
 
   margin-top:20px;
 
-  background:#1f3d1f;
+  background:#1d3b1d;
 
-  color:#8cff8c;
+  color:#7dff7d;
 
   padding:15px;
 
   border-radius:10px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-up{
+  animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+  header{
+    padding:20px;
+  }
+
+  .hero h1{
+    font-size:50px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  nav a{
+    margin-left:12px;
+    font-size:14px;
+  }
+
+  .ticket-box{
+    padding:30px;
+  }
+
 }

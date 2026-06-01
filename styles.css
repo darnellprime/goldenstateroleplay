@@ -1,70 +1,97 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0b0b;
+  background: radial-gradient(circle at top, #141414, #070707 60%);
   color: white;
 }
 
-/* NAVBAR */
+/* NAVBAR (glass + depth) */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 50px;
-  background: rgba(0,0,0,0.9);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
+
+  background: rgba(10,10,10,0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,215,0,0.15);
 }
 
 .navbar .logo {
   color: gold;
   font-weight: bold;
   font-size: 20px;
+  text-shadow: 0 0 15px rgba(255,215,0,0.3);
 }
 
 .navbar nav a {
   margin: 0 12px;
-  color: white;
+  color: #ddd;
   text-decoration: none;
   font-size: 14px;
+  transition: 0.2s;
+}
+
+.navbar nav a:hover {
+  color: gold;
+  text-shadow: 0 0 10px rgba(255,215,0,0.4);
 }
 
 .discord-btn {
-  background: gold;
-  padding: 8px 14px;
-  border-radius: 6px;
+  background: linear-gradient(145deg, gold, #b8860b);
+  padding: 10px 16px;
+  border-radius: 8px;
   color: black;
   text-decoration: none;
   font-weight: bold;
+
+  box-shadow: 0 10px 30px rgba(255,215,0,0.15);
+  transition: 0.2s;
 }
 
-/* HERO */
+.discord-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* HERO (3D layered depth) */
 .hero {
-  height: 90vh;
+  height: 95vh;
   background: url("https://images.unsplash.com/photo-1508057198894-247b23fe5ade") center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   text-align: center;
+  overflow: hidden;
 }
 
-.overlay {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.65);
+  background:
+    radial-gradient(circle at center, rgba(255,215,0,0.12), transparent 40%),
+    linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+
+  transform: translateZ(0);
 }
 
 .hero h1 {
-  font-size: 60px;
+  font-size: 70px;
   margin: 10px 0;
+
+  text-shadow:
+    0 5px 30px rgba(0,0,0,0.7),
+    0 0 25px rgba(255,215,0,0.2);
 }
 
 .hero span {
@@ -72,95 +99,137 @@ body {
 }
 
 .hero p {
-  color: #ccc;
+  color: #cfcfcf;
+  letter-spacing: 2px;
 }
 
-.buttons {
-  margin-top: 20px;
-}
-
+/* BUTTONS (3D lift effect) */
 .btn {
-  padding: 10px 18px;
+  padding: 12px 20px;
   margin: 5px;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: 0.25s;
 }
 
 .gold {
-  background: gold;
+  background: linear-gradient(145deg, gold, #b8860b);
   color: black;
   font-weight: bold;
+  box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+}
+
+.gold:hover {
+  transform: translateY(-3px);
 }
 
 .outline {
   border: 1px solid gold;
   color: gold;
+  background: rgba(255,215,0,0.05);
 }
 
-/* STATS */
+.outline:hover {
+  transform: translateY(-3px);
+  background: rgba(255,215,0,0.1);
+}
+
+/* STATS (floating glass cards) */
 .stats {
   display: flex;
   justify-content: space-around;
   padding: 30px;
-  background: #111;
-  font-size: 14px;
+  background: rgba(20,20,20,0.6);
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(255,215,0,0.08);
+  border-bottom: 1px solid rgba(255,215,0,0.08);
+
+  transform: translateY(-20px);
+  margin: 0 40px;
+  border-radius: 15px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.stats div {
+  text-align: center;
 }
 
 .stats span {
   color: gold;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 50px;
+  padding: 90px 50px;
 }
 
 .section h2 {
   text-align: center;
   margin-bottom: 40px;
+  letter-spacing: 2px;
 }
 
-.dark {
-  background: #0f0f0f;
-}
-
-/* GRID CARDS */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-.grid.small {
-  grid-template-columns: repeat(4, 1fr);
+/* CARDS (this is where the 3D feel really shows) */
+.card {
+  background: linear-gradient(145deg, #161616, #0f0f0f);
+  padding: 25px;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,215,0,0.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 1px rgba(255,255,255,0.03);
+
+  transition: 0.25s ease;
+  text-align: center;
 }
 
-.card {
-  background: #151515;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #222;
-  text-align: center;
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.8),
+    0 0 25px rgba(255,215,0,0.08);
 }
 
 .card h3 {
   color: gold;
 }
 
+/* DARK SECTION */
+.dark {
+  background: radial-gradient(circle at top, #111, #070707);
+}
+
 /* RESPONSIVE */
 @media(max-width: 900px){
-  .grid, .grid.small {
+  .grid {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .navbar {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 15px;
   }
 }

@@ -10,58 +10,75 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: #111;
+  padding: 18px 40px;
+  background: rgba(17,17,17,0.9);
   position: sticky;
   top: 0;
+  backdrop-filter: blur(10px);
 }
 
 .logo {
-  color: gold;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
+  color: gold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
 }
 
 nav a {
-  margin: 0 10px;
   color: white;
   text-decoration: none;
+  transition: 0.2s;
 }
 
+nav a:hover {
+  color: gold;
+}
+
+/* BUTTON */
 .btn {
-  padding: 10px 15px;
   background: gold;
   color: black;
-  border-radius: 5px;
+  padding: 10px 16px;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
+  background: radial-gradient(circle at top, #1a1a1a, #0a0a0a);
 }
 
 .hero h1 {
   font-size: 60px;
+  margin: 0;
 }
 
 .hero p {
   color: #aaa;
+  font-size: 18px;
 }
 
 .hero-buttons {
-  margin-top: 20px;
-}
-
-.gold {
-  background: gold;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .outline {
   border: 1px solid gold;
   background: transparent;
   color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
 }
 
 /* STATS */
@@ -69,25 +86,25 @@ nav a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 60px;
+  padding: 60px 80px;
 }
 
 .card {
   background: #111;
   padding: 30px;
-  text-align: center;
   border-radius: 10px;
-  font-size: 24px;
+  text-align: center;
+  font-size: 26px;
   color: gold;
 }
 
 .card span {
   display: block;
-  color: white;
   font-size: 14px;
+  color: white;
 }
 
-/* DIVISIONS + LEADERSHIP */
+/* SECTIONS */
 .divisions, .leadership {
   text-align: center;
   padding: 80px 20px;
